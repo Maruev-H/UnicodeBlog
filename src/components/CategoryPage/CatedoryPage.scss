@@ -1,0 +1,123 @@
+.Wrapper {
+  font-family: Open Sans;
+  a{
+    color: black;
+  }
+  &__midl {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: auto;
+    border-top: 2px solid black;
+    margin-top: 36px;
+    padding-top: 25px;
+  }
+  &__left {
+    min-height: 1219px;
+    h1 {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 82px;
+      margin: 0 auto 78px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__map {
+    display: flex;
+    margin-bottom: 45px;
+  }
+  .line {
+    border-top: 2px solid black;
+    padding-top: 41px;
+  }
+  &__image {
+    max-width: 495px;
+    max-height: 330px;
+    text-align: center;
+    img {
+      max-width: 495px;
+      max-height: 100%;
+
+      border-radius: 15px;
+    }
+  }
+  &__description {
+    margin: 0 0 0 10px;
+    max-width: 291px;
+    h3 {
+      margin: 5px 0 10px 0;
+      font-weight: 700;
+    }
+    span p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 27px;
+    }
+    p {
+      color: blue;
+    }
+  }
+  &__right {
+    max-width: 554px;
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 54px;
+      margin-top: 0;
+    }
+  }
+  &__recomended {
+    width: 100%;
+    padding: 0 29.5px 48px;
+    border-bottom: 2px solid black;
+    margin-bottom: 48px;
+    h3 {
+      text-align: center;
+      width: 100%;
+    }
+    span p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 27px;
+    }
+    p{
+        color: blue;
+    }
+    img {
+      max-width: 495px;
+      border-radius: 15px;
+    }
+  }
+  &__bottom {
+    width: 100%;
+    h1 {
+      margin: 15px 0 41px 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__images {
+    margin: auto;
+    max-width: 1533px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div {
+      width: 495px;
+      height: 330px;
+      margin-bottom: 31px;
+      border-radius: 15px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2 {
+        width: 100%;
+        text-align: center;
+        margin: 28px 0 0 0;
+      }
+    }
+  }
+}

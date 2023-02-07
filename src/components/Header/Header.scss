@@ -1,0 +1,44 @@
+.header {
+    margin: auto;
+    max-width: 1400px;
+    a{
+        color: black;
+    }
+    &__logo{
+        max-width: 410px;
+        margin: auto;
+        display: flex;
+        font-family: 'Anton', sans-serif;
+        align-items: center;
+        h1{
+            padding-bottom: 82px;
+            margin-top: 31px;
+            text-align: center;
+            transform: rotate(-90deg);
+            color: white;
+            background-color: black;
+            width: 86px;
+            height: 71px;
+            font-size: 60px;
+            font-weight: 400;
+            line-height: 90px;
+        }
+        h2{
+            margin: 0;
+            font-family: Anton;
+            font-size: 100px;
+            font-weight: 400;
+            line-height: 151px;
+        }
+    }
+    ul {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        max-width: 735px;
+    }
+}
+.active{
+    border-bottom: 1px solid black;
+}
