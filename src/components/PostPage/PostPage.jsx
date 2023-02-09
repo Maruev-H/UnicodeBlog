@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { ThreeCircles } from "react-loader-spinner";
@@ -8,7 +8,7 @@ export default function PostPage() {
     const {id} = useParams()
     const { posts, isLoading } = useSelector((state) => state.posts);
 
-    const [post] = useState(posts.filter((item)=>(item._id === id))[0])
+    const post = posts.find((item)=>(item._id === id))
 
     if(isLoading || !post){
       return(

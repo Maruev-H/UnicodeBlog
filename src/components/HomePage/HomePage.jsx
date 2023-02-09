@@ -38,28 +38,36 @@ export default function HomePage() {
             backgroundImage: `url(${posts[0].image})`,
           }}
         >
-          <h1>{posts[0].title}</h1>
-          <span>{posts[0].text.substring(0, 50)}...</span>
+          <div>
+            <h1>{posts[0].title}</h1>
+            <span>{posts[0].text.substring(0, 50)}...</span>
+          </div>
         </Link>
         <div className="Posts__right">
           <Link to={`/post/${posts[posts.length - 1]._id}`}>
             <div
+            className="Posts__section"
               style={{
                 backgroundImage: `url(${posts[posts.length - 1].image})`,
               }}
             >
-              <h1>{posts[posts.length - 1].title}</h1>
-              <span>{posts[posts.length - 1].text.substring(0, 50)}...</span>
+              <div>
+                <h1>{posts[posts.length - 1].title}</h1>
+                <span>{posts[posts.length - 1].text.substring(0, 50)}...</span>
+              </div>
             </div>
           </Link>
           <Link to={`/post/${posts[2]._id}`}>
             <div
+            className="Posts__section"
               style={{
                 backgroundImage: `url(${posts[2].image})`,
               }}
             >
-              <h1>{posts[2].title}</h1>
-              <span>{posts[2].text.substring(0, 50)}...</span>
+              <div>
+                <h1>{posts[2].title}</h1>
+                <span>{posts[2].text.substring(0, 50)}...</span>
+              </div>
             </div>
           </Link>
         </div>
@@ -68,8 +76,12 @@ export default function HomePage() {
         <h1>Последние новости в мире IT</h1>
         <div className="End__posts">
           <div>
-            <Link to={`/post/${posts[1]._id}`}>
-              <img className="End__left" src={`${posts[1].image}`} alt="img" />
+            <Link to={`/post/${posts[posts.length - 1]._id}`}>
+              <img
+                className="End__left"
+                src={`${posts[posts.length - 1].image}`}
+                alt="img"
+              />
             </Link>
             <h3>{posts[posts.length - 1].title}</h3>
             <ReadMore len="70">{posts[posts.length - 1].text}</ReadMore>

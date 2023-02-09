@@ -35,9 +35,9 @@ export default function Header() {
         </div>
       </Link>
       <ul>
-        {categories.map((category, i) => (
-          <NavLink to={`/category/${category._id}`}>
-            <li key={i}>{category.title}</li>
+        {categories.map((category) => (
+          <NavLink to={`/category/${category._id}`} key={category._id}>
+            <li>{category.title}</li>
           </NavLink>
         ))}
       </ul>

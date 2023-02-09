@@ -5,11 +5,16 @@ import { fetchPosts } from "../../reducers/postsReducer";
 import "./CatedoryPage.scss";
 import { ThreeCircles } from "react-loader-spinner";
 import ReadMore from "../ReadMoreBtn/ReadMore";
+import RecomendedBottom from "./RecomendedBottom";
+import RecomendedRight from "./RecomendedRight";
 
 export default function CategoryPage() {
+
   const { id } = useParams();
+
   const { posts, isLoading } = useSelector((state) => state.posts);
   const { categories } = useSelector((state) => state.categories);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,53 +42,28 @@ export default function CategoryPage() {
     <div className="Wrapper">
       <div className="Wrapper__midl">
         <div className="Wrapper__left">
-          <h1>{categories.filter((item) => item._id === id)[0].title}</h1>
-          {category.map((item, i) => (
-            <Link to={`/post/${item._id}`}>
-              <div className={`Wrapper__map ${i !== 0 && "line"}`} key={i}>
+          <h1>{categories.find((item) => item._id === id).title}</h1>
+          {category.map((item, index) => (
+            <>
+              {index !== 0 && <hr />}
+              <div className={`Wrapper__map`}>
                 <div className="Wrapper__image">
-                  <img src={item.image} alt='surt'/>
+                  <Link to={`/post/${item._id}`}>
+                    <img src={item.image} alt="surt" />
+                  </Link>
                 </div>
+
                 <div className="Wrapper__description">
                   <h3>{item.title}</h3>
                   <ReadMore len="200">{item.text}</ReadMore>
                 </div>
               </div>
-            </Link>
+            </>
           ))}
         </div>
-        <div className="Wrapper__right">
-          <h2>Рекомендуем к прочтению</h2>
-          {posts.slice(6, 8).map((item) => (
-            <Link to={`/post/${item._id}`}>
-              <div className="Wrapper__recomended">
-                <img src={item.image} alt="img" />
-                <h3>{item.title}</h3>
-                <ReadMore len="350">{item.text}</ReadMore>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <RecomendedRight />
       </div>
-      <div className="Wrapper__bottom">
-        <h1>Рекомендуем к прочтению</h1>
-        <div className="Wrapper__images">
-          {posts.slice(0, 6).map((item) => (
-            <Link to={`/post/${item._id}`}>
-              <div
-                style={{
-                  background: `url(${item.image})`,
-                  backgroundPosition: `center`,
-                  backgroundRepeat: `no-repeat`,
-                  backgroundSize: `cover`,
-                }}
-              >
-                <h2>{item.title}</h2>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <RecomendedBottom />
     </div>
   );
 }
